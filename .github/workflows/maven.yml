@@ -35,6 +35,7 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
+      - run: mvn --batch-mode --update-snapshots verify
       - run: mkdir desenvolvimento && cp target/*.war desenvolvimento
       - uses: actions/upload-artifact@v2
         with:
