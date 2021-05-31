@@ -52,21 +52,21 @@ jobs:
       with:
         name: artifact
         path: criando-pipeline/target/criando-pipeline.war
-        
   deploy-in-desenvolvimento:
     needs: [build]
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
+    name: Deploy Heroku
     steps:
     - uses: actions/checkout@v2
     - name: Download Maven build artifact
       uses: actions/download-artifact@v2
       with:
         name: artifact
-    - name: criando o repositorio targe e copiando o arquivo para dentro dele
-      run:  mkdir -p criando-pipeline/target
+    - name: criando o repositorio target e copiando o arquivo para dentro dele
+    - run:  mkdir -p criando-pipeline/target
     - name: copiando o repositorio o arquivo para dentro dp target
-      run:  mv criando-pipeline.war criando-pipeline/target
-    - name: Start deploy
+    - run:  mv criando-pipeline.war criando-pipeline/target
+    - name: Acessando o heroku
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
