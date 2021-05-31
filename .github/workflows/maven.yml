@@ -64,9 +64,12 @@ jobs:
         name: artifact
         java-version: '8'
         distribution: 'adopt'
-        run: |
-          mkdir -p criando-pipeline/target
-          mv criando-pipeline.war criando-pipeline/target
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
         heroku_app_name: 'criando-pipeline'
         heroku_email: 'e.syadetbo@gmail.com'
+    - name: criando o repositório e movendo o arquivo para dentro
+      run: |
+          mkdir -p criando-pipeline/target
+          mv criando-pipeline.war criando-pipeline/target
+    - name: Deploy em desenvolvimento feito
+
