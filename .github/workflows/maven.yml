@@ -56,17 +56,17 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest  
     steps:
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v2 
-      - uses: actions/download-artifact@v2
-        with:
-          name: artifact
-          java-version: '8'
-          distribution: 'adopt'
-          run: |
-            mkdir -p criando-pipeline/target
-            mv criando-pipeline.war criando-pipeline/target
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "criando-pipeline" #Must be unique in Heroku
-          heroku_email: "e.syadetbo@gmail.com"
+    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v2 
+    - uses: actions/download-artifact@v2
+      with:
+        name: artifact
+        java-version: '8'
+        distribution: 'adopt'
+        run: |
+          mkdir -p criando-pipeline/target
+          mv criando-pipeline.war criando-pipeline/target
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: 'criando-pipeline'
+        heroku_email: 'e.syadetbo@gmail.com'
