@@ -67,4 +67,3 @@ jobs:
       run: |
         mkdir -p criando-pipeline/target
         mv criando-pipeline.war criando-pipeline/target
-    - name: Deploy em desenvolvimento feito
