@@ -67,3 +67,9 @@ jobs:
       run: |
         mkdir -p criando-pipeline/target
         mv criando-pipeline.war criando-pipeline/target
+    - name: Acessando o heroku
+      uses: akhileshns/heroku-deploy@v3.12.12
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: 'criando-pipeline'
+        heroku_email: 'e.syadetbo@gmail.com'
