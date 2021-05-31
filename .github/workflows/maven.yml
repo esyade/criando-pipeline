@@ -54,8 +54,8 @@ jobs:
         path: criando-pipeline/target/criando-pipeline.war
         
   deploy-in-desenvolvimento:
-    needs: [build]
     runs-on: ubuntu-latest
+    needs: [build]
     name: Deploy Heroku
     steps:
     - uses: actions/checkout@v2
