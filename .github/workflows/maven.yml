@@ -63,9 +63,9 @@ jobs:
       with:
         name: artifact
     - name: criando o repositorio target e copiando o arquivo para dentro dele
-    - run:  mkdir -p criando-pipeline/target
-    - name: copiando o repositorio o arquivo para dentro dp target
-    - run:  mv criando-pipeline.war criando-pipeline/target
+      run: |
+        mkdir -p criando-pipeline/target
+        mv criando-pipeline.war criando-pipeline/target
     - name: Acessando o heroku
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
