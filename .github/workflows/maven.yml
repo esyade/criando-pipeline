@@ -63,7 +63,7 @@ jobs:
           name: artifact
           java-version: '8'
           distribution: 'adopt'
-          run: |
+          run:
             mkdir -p criando-pipeline/target
             mv criando-pipeline.war criando-pipeline/target
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
