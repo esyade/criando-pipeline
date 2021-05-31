@@ -58,11 +58,6 @@ jobs:
     runs-on: ubuntu-latest  
     steps:
     - uses: actions/checkout@v2
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '8'
-        distribution: 'adopt'
     - name: Download Maven build artifact
     - uses: actions/download-artifact@v2
       with:
