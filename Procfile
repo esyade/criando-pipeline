@@ -1,2 +1,2 @@
-web: java -war target/criando-pipeline.war
+heroku war:deploy target/ --app criando-pipeline.war
 heroku ps: escala web = 1
