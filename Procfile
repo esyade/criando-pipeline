@@ -1,2 +1,2 @@
-web: java -war target/criando-pipeline.war
-heroku ps: scale web= 1
+web: java -jar -Dserver.port=$PORT target/criando-pipeline.war
+heroku ps:scale web=1 --app criando-pipeline
